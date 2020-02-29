@@ -1,0 +1,333 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>顺序表课后习题 | Gridea</title>
+<link rel="shortcut icon" href="https://yuehuajiang.github.io/favicon.ico?v=1582966013738">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://yuehuajiang.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="顺序表课后习题 | Gridea - Atom Feed" href="https://yuehuajiang.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="醉了，原本想着自己弄明白的，结果还是抄了别人的作业
+算了，弄明白最重要
+一、请完成下列算法填空实现对顺序表逆置存储，逆置存储是指将元素线性关系逆置后的顺序存储，例如（a0,a1,a2），关系逆置后（a2,a1,a0).
+SeqList的结构..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://yuehuajiang.github.io">
+  <img class="avatar" src="https://yuehuajiang.github.io/images/avatar.png?v=1582966013738" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              顺序表课后习题
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-02-29
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>醉了，原本想着自己弄明白的，结果还是抄了别人的作业</p>
+<p>算了，弄明白最重要</p>
+<h3 id="一-请完成下列算法填空实现对顺序表逆置存储逆置存储是指将元素线性关系逆置后的顺序存储例如a0a1a2关系逆置后a2a1a0">一、请完成下列算法填空实现对顺序表逆置存储，逆置存储是指将元素线性关系逆置后的顺序存储，例如（a0,a1,a2），关系逆置后（a2,a1,a0).</h3>
+<p>SeqList的结构体定义如下：</p>
+<pre><code class="language-c">typedef struct seqList
+{
+    int n;
+    int maxLength;
+    ElemType *element;
+}SeqList;
+</code></pre>
+<h3 id="题目">题目</h3>
+<pre><code class="language-c">void Invert(SeqList *L) {
+ElemType temp; int i; 
+for ( i=0; i&lt;________; i++) { 
+    temp =____________; 
+    L-&gt;element[i] = L-&gt;element[___________]; 
+    L-&gt;element[________] = ___________; }
+}
+</code></pre>
+<h3 id="答案这个是我自己写的">答案(这个是我自己写的)</h3>
+<p>题目给了中间变量，很可能是用到交换的法</p>
+<pre><code class="language-c">void Invert(SeqList *L) {
+ElemType temp; int i; 
+for ( i=0; i&lt;n; i++)//从首尾向中间靠拢 
+{ 
+    temp =L-&gt;element[i]; 
+    L-&gt;element[i] = L-&gt;element[n-i];//将首端和尾端的元素互换
+    L-&gt;element[n-i] = temp; 
+}
+
+</code></pre>
+<h3 id="二-请完成下列算法填空现对单链表的逆置存储逆置存储是指将元素线性关系逆置后的链表存储例如a0a1a2关系逆置后为a2a1a0">二、请完成下列算法填空现对单链表的逆置存储，逆置存储是指将元素线性关系逆置后的链表存储，例如（a0,a1,a2），关系逆置后为（a2,a1,a0).</h3>
+<p>单链表结点Node和单链表SingleList结构体定义如下：</p>
+<pre><code class="language-c">typedef struct node
+{
+     ElemType element;
+     struct node *link;
+}Node;
+
+typedef struct singlelist
+{
+    Node *first;
+    int n;
+}SingleList;
+</code></pre>
+<h3 id="题目-2">题目</h3>
+<pre><code class="language-c">void invert(SingleList *L) 
+{ 
+	Node *p=__________,*q; 
+	L-&gt;first=NULL; 
+	while (_____)
+    { 
+    	q=p-&gt;link; 
+    	p-&gt;link=_______; 
+    	L-&gt;first=_______; 
+   		p=_______; 
+    } 
+}
+</code></pre>
+<h3 id="答案">答案</h3>
+<pre><code class="language-c">void invert(SingleList *L) 
+{ 
+	Node *p=L-&gt;first,*q; 
+	L-&gt;first=NULL; 
+	while (p!=NULL)
+    { 
+    	q=p-&gt;link; 
+    	p-&gt;link=L-&gt;first; 
+    	L-&gt;first=p; 
+   		p=q; 
+    } 
+}
+</code></pre>
+<img src="E:\大学\博文\图片\图一.jpg" style="zoom:15%;" />
+<h3 id="三-完成下列算法填空将两个有序递增的带表头结点的单链表合并为一个有序递增的单链表">三、完成下列算法填空，将两个有序递增的带表头结点的单链表合并为一个有序递增的单链表。</h3>
+<p>链表结点Node和链表SingleList结构体定义如下：</p>
+<pre><code class="language-c">typedef struct node
+{
+     ElemType element;
+     struct node *link;
+}Node;
+
+typedef struct headerlist
+{
+    Node *head;
+    int n;
+}HeaderList;
+</code></pre>
+<h3 id="题目-3">题目</h3>
+<pre><code class="language-c">void MergeList1(HeaderList *La,HeaderList *Lb,HeaderList *Lc) { 
+//合并链表La和Lb，合并后的新表使用头指针Lc指向 
+Node *pa,*pb,*pc,*q;
+pa=La-&gt;head-&gt;link; 
+pb=Lb-&gt;head-&gt;link; 
+pc=Lc-&gt;head; 
+while(pa &amp;&amp; pb) {
+     if(____________________) { 
+           pc-&gt;link=pa; 
+           pc=pa; 
+           pa=pa-&gt;link; 
+           La-&gt;n--; }
+     else if(pa-&gt;element&gt;pb-&gt;element) { 
+           pc-&gt;link=___________; 
+           pc=________; 
+           pb=_________;
+           Lb-&gt;n--; } 
+      else { 
+           pc-&gt;link=pa; 
+           pc=pa; 
+           pa=_________; 
+           q=_________; 
+           free(pb); 
+           pb =q; } 
+Lc-&gt;n++; } 
+pc-&gt;link=pa?pa:pb; //插入剩余段 Lc-&gt;n+=pa?La-&gt;n:Lb-&gt;n; 
+}
+</code></pre>
+<h3 id="答案-2">答案</h3>
+<pre><code class="language-c">void MergeList1(HeaderList *La,HeaderList *Lb,HeaderList *Lc) { 
+//合并链表La和Lb，合并后的新表使用头指针Lc指向 
+Node *pa,*pb,*pc,*q;
+pa=La-&gt;head-&gt;link; 
+pb=Lb-&gt;head-&gt;link; 
+pc=Lc-&gt;head; 
+while(pa &amp;&amp; pb) {
+     if(pa-&gt;element&lt;pb-&gt;element) { 
+           pc-&gt;link=pa;//把pa挂在pc上 
+           pc=pa; 
+           pa=pa-&gt;link;//往后 
+           La-&gt;n--; }
+     else if(pa-&gt;element&gt;pb-&gt;element) { 
+           pc-&gt;link=pb; 
+           pc=pb; 
+           pb=pb-&gt;link;
+           Lb-&gt;n--; } 
+      else { 
+           pc-&gt;link=pa; 
+           pc=pa; 
+           pa=pa-&gt;link; 
+           q=pb-&gt;link; 
+           free(pb); 
+           pb =q; } 
+Lc-&gt;n++; } 
+pc-&gt;link=pa?pa:pb; //插入剩余段 Lc-&gt;n+=pa?La-&gt;n:Lb-&gt;n; 
+}
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E4%B8%80-%E8%AF%B7%E5%AE%8C%E6%88%90%E4%B8%8B%E5%88%97%E7%AE%97%E6%B3%95%E5%A1%AB%E7%A9%BA%E5%AE%9E%E7%8E%B0%E5%AF%B9%E9%A1%BA%E5%BA%8F%E8%A1%A8%E9%80%86%E7%BD%AE%E5%AD%98%E5%82%A8%E9%80%86%E7%BD%AE%E5%AD%98%E5%82%A8%E6%98%AF%E6%8C%87%E5%B0%86%E5%85%83%E7%B4%A0%E7%BA%BF%E6%80%A7%E5%85%B3%E7%B3%BB%E9%80%86%E7%BD%AE%E5%90%8E%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E4%BE%8B%E5%A6%82a0a1a2%E5%85%B3%E7%B3%BB%E9%80%86%E7%BD%AE%E5%90%8Ea2a1a0">一、请完成下列算法填空实现对顺序表逆置存储，逆置存储是指将元素线性关系逆置后的顺序存储，例如（a0,a1,a2），关系逆置后（a2,a1,a0).</a></li>
+<li><a href="#%E9%A2%98%E7%9B%AE">题目</a></li>
+<li><a href="#%E7%AD%94%E6%A1%88%E8%BF%99%E4%B8%AA%E6%98%AF%E6%88%91%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84">答案(这个是我自己写的)</a></li>
+<li><a href="#%E4%BA%8C-%E8%AF%B7%E5%AE%8C%E6%88%90%E4%B8%8B%E5%88%97%E7%AE%97%E6%B3%95%E5%A1%AB%E7%A9%BA%E7%8E%B0%E5%AF%B9%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E9%80%86%E7%BD%AE%E5%AD%98%E5%82%A8%E9%80%86%E7%BD%AE%E5%AD%98%E5%82%A8%E6%98%AF%E6%8C%87%E5%B0%86%E5%85%83%E7%B4%A0%E7%BA%BF%E6%80%A7%E5%85%B3%E7%B3%BB%E9%80%86%E7%BD%AE%E5%90%8E%E7%9A%84%E9%93%BE%E8%A1%A8%E5%AD%98%E5%82%A8%E4%BE%8B%E5%A6%82a0a1a2%E5%85%B3%E7%B3%BB%E9%80%86%E7%BD%AE%E5%90%8E%E4%B8%BAa2a1a0">二、请完成下列算法填空现对单链表的逆置存储，逆置存储是指将元素线性关系逆置后的链表存储，例如（a0,a1,a2），关系逆置后为（a2,a1,a0).</a></li>
+<li><a href="#%E9%A2%98%E7%9B%AE-2">题目</a></li>
+<li><a href="#%E7%AD%94%E6%A1%88">答案</a></li>
+<li><a href="#%E4%B8%89-%E5%AE%8C%E6%88%90%E4%B8%8B%E5%88%97%E7%AE%97%E6%B3%95%E5%A1%AB%E7%A9%BA%E5%B0%86%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%80%92%E5%A2%9E%E7%9A%84%E5%B8%A6%E8%A1%A8%E5%A4%B4%E7%BB%93%E7%82%B9%E7%9A%84%E5%8D%95%E9%93%BE%E8%A1%A8%E5%90%88%E5%B9%B6%E4%B8%BA%E4%B8%80%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%80%92%E5%A2%9E%E7%9A%84%E5%8D%95%E9%93%BE%E8%A1%A8">三、完成下列算法填空，将两个有序递增的带表头结点的单链表合并为一个有序递增的单链表。</a></li>
+<li><a href="#%E9%A2%98%E7%9B%AE-3">题目</a></li>
+<li><a href="#%E7%AD%94%E6%A1%88-2">答案</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://yuehuajiang.github.io/post/hello-gridea/">
+              <h3 class="post-title">
+                Hello Gridea
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://yuehuajiang.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

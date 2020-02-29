@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuehuajiang.github.io</id>
     <title>Gridea</title>
-    <updated>2020-02-29T08:43:45.557Z</updated>
+    <updated>2020-02-29T08:46:58.310Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuehuajiang.github.io"/>
     <link rel="self" href="https://yuehuajiang.github.io/atom.xml"/>
@@ -10,6 +10,161 @@
     <logo>https://yuehuajiang.github.io/images/avatar.png</logo>
     <icon>https://yuehuajiang.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[顺序表课后习题]]></title>
+        <id>https://yuehuajiang.github.io/post/shun-xu-biao-ke-hou-xi-ti/</id>
+        <link href="https://yuehuajiang.github.io/post/shun-xu-biao-ke-hou-xi-ti/">
+        </link>
+        <updated>2020-02-29T08:46:07.000Z</updated>
+        <content type="html"><![CDATA[<p>醉了，原本想着自己弄明白的，结果还是抄了别人的作业</p>
+<p>算了，弄明白最重要</p>
+<h3 id="一-请完成下列算法填空实现对顺序表逆置存储逆置存储是指将元素线性关系逆置后的顺序存储例如a0a1a2关系逆置后a2a1a0">一、请完成下列算法填空实现对顺序表逆置存储，逆置存储是指将元素线性关系逆置后的顺序存储，例如（a0,a1,a2），关系逆置后（a2,a1,a0).</h3>
+<p>SeqList的结构体定义如下：</p>
+<pre><code class="language-c">typedef struct seqList
+{
+    int n;
+    int maxLength;
+    ElemType *element;
+}SeqList;
+</code></pre>
+<h3 id="题目">题目</h3>
+<pre><code class="language-c">void Invert(SeqList *L) {
+ElemType temp; int i; 
+for ( i=0; i&lt;________; i++) { 
+    temp =____________; 
+    L-&gt;element[i] = L-&gt;element[___________]; 
+    L-&gt;element[________] = ___________; }
+}
+</code></pre>
+<h3 id="答案这个是我自己写的">答案(这个是我自己写的)</h3>
+<p>题目给了中间变量，很可能是用到交换的法</p>
+<pre><code class="language-c">void Invert(SeqList *L) {
+ElemType temp; int i; 
+for ( i=0; i&lt;n; i++)//从首尾向中间靠拢 
+{ 
+    temp =L-&gt;element[i]; 
+    L-&gt;element[i] = L-&gt;element[n-i];//将首端和尾端的元素互换
+    L-&gt;element[n-i] = temp; 
+}
+
+</code></pre>
+<h3 id="二-请完成下列算法填空现对单链表的逆置存储逆置存储是指将元素线性关系逆置后的链表存储例如a0a1a2关系逆置后为a2a1a0">二、请完成下列算法填空现对单链表的逆置存储，逆置存储是指将元素线性关系逆置后的链表存储，例如（a0,a1,a2），关系逆置后为（a2,a1,a0).</h3>
+<p>单链表结点Node和单链表SingleList结构体定义如下：</p>
+<pre><code class="language-c">typedef struct node
+{
+     ElemType element;
+     struct node *link;
+}Node;
+
+typedef struct singlelist
+{
+    Node *first;
+    int n;
+}SingleList;
+</code></pre>
+<h3 id="题目-2">题目</h3>
+<pre><code class="language-c">void invert(SingleList *L) 
+{ 
+	Node *p=__________,*q; 
+	L-&gt;first=NULL; 
+	while (_____)
+    { 
+    	q=p-&gt;link; 
+    	p-&gt;link=_______; 
+    	L-&gt;first=_______; 
+   		p=_______; 
+    } 
+}
+</code></pre>
+<h3 id="答案">答案</h3>
+<pre><code class="language-c">void invert(SingleList *L) 
+{ 
+	Node *p=L-&gt;first,*q; 
+	L-&gt;first=NULL; 
+	while (p!=NULL)
+    { 
+    	q=p-&gt;link; 
+    	p-&gt;link=L-&gt;first; 
+    	L-&gt;first=p; 
+   		p=q; 
+    } 
+}
+</code></pre>
+<img src="E:\大学\博文\图片\图一.jpg" style="zoom:15%;" />
+<h3 id="三-完成下列算法填空将两个有序递增的带表头结点的单链表合并为一个有序递增的单链表">三、完成下列算法填空，将两个有序递增的带表头结点的单链表合并为一个有序递增的单链表。</h3>
+<p>链表结点Node和链表SingleList结构体定义如下：</p>
+<pre><code class="language-c">typedef struct node
+{
+     ElemType element;
+     struct node *link;
+}Node;
+
+typedef struct headerlist
+{
+    Node *head;
+    int n;
+}HeaderList;
+</code></pre>
+<h3 id="题目-3">题目</h3>
+<pre><code class="language-c">void MergeList1(HeaderList *La,HeaderList *Lb,HeaderList *Lc) { 
+//合并链表La和Lb，合并后的新表使用头指针Lc指向 
+Node *pa,*pb,*pc,*q;
+pa=La-&gt;head-&gt;link; 
+pb=Lb-&gt;head-&gt;link; 
+pc=Lc-&gt;head; 
+while(pa &amp;&amp; pb) {
+     if(____________________) { 
+           pc-&gt;link=pa; 
+           pc=pa; 
+           pa=pa-&gt;link; 
+           La-&gt;n--; }
+     else if(pa-&gt;element&gt;pb-&gt;element) { 
+           pc-&gt;link=___________; 
+           pc=________; 
+           pb=_________;
+           Lb-&gt;n--; } 
+      else { 
+           pc-&gt;link=pa; 
+           pc=pa; 
+           pa=_________; 
+           q=_________; 
+           free(pb); 
+           pb =q; } 
+Lc-&gt;n++; } 
+pc-&gt;link=pa?pa:pb; //插入剩余段 Lc-&gt;n+=pa?La-&gt;n:Lb-&gt;n; 
+}
+</code></pre>
+<h3 id="答案-2">答案</h3>
+<pre><code class="language-c">void MergeList1(HeaderList *La,HeaderList *Lb,HeaderList *Lc) { 
+//合并链表La和Lb，合并后的新表使用头指针Lc指向 
+Node *pa,*pb,*pc,*q;
+pa=La-&gt;head-&gt;link; 
+pb=Lb-&gt;head-&gt;link; 
+pc=Lc-&gt;head; 
+while(pa &amp;&amp; pb) {
+     if(pa-&gt;element&lt;pb-&gt;element) { 
+           pc-&gt;link=pa;//把pa挂在pc上 
+           pc=pa; 
+           pa=pa-&gt;link;//往后 
+           La-&gt;n--; }
+     else if(pa-&gt;element&gt;pb-&gt;element) { 
+           pc-&gt;link=pb; 
+           pc=pb; 
+           pb=pb-&gt;link;
+           Lb-&gt;n--; } 
+      else { 
+           pc-&gt;link=pa; 
+           pc=pa; 
+           pa=pa-&gt;link; 
+           q=pb-&gt;link; 
+           free(pb); 
+           pb =q; } 
+Lc-&gt;n++; } 
+pc-&gt;link=pa?pa:pb; //插入剩余段 Lc-&gt;n+=pa?La-&gt;n:Lb-&gt;n; 
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://yuehuajiang.github.io/post/hello-gridea/</id>
