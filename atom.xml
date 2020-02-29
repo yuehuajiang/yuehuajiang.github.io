@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuehuajiang.github.io</id>
     <title>抗马拉硫磷的小菜蛾</title>
-    <updated>2020-02-29T08:53:52.089Z</updated>
+    <updated>2020-02-29T09:07:46.583Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuehuajiang.github.io"/>
     <link rel="self" href="https://yuehuajiang.github.io/atom.xml"/>
@@ -90,7 +90,7 @@ typedef struct singlelist
     } 
 }
 </code></pre>
-<img src="E:\大学\博文\图片\图一.jpg" style="zoom:15%;" />
+<figure data-type="image" tabindex="1"><img src="https://yuehuajiang.github.io/post-images/1582967257324.jpg" alt="" loading="lazy"></figure>
 <h3 id="三-完成下列算法填空将两个有序递增的带表头结点的单链表合并为一个有序递增的单链表">三、完成下列算法填空，将两个有序递增的带表头结点的单链表合并为一个有序递增的单链表。</h3>
 <p>链表结点Node和链表SingleList结构体定义如下：</p>
 <pre><code class="language-c">typedef struct node
