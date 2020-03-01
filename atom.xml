@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuehuajiang.github.io</id>
     <title>抗马拉硫磷的小菜蛾</title>
-    <updated>2020-02-29T09:23:09.271Z</updated>
+    <updated>2020-03-01T03:35:35.417Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuehuajiang.github.io"/>
     <link rel="self" href="https://yuehuajiang.github.io/atom.xml"/>
@@ -10,6 +10,215 @@
     <logo>https://yuehuajiang.github.io/images/avatar.png</logo>
     <icon>https://yuehuajiang.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 抗马拉硫磷的小菜蛾</rights>
+    <entry>
+        <title type="html"><![CDATA[线性表的顺序储存结构和实现]]></title>
+        <id>https://yuehuajiang.github.io/post/xian-xing-biao-de-shun-xu-chu-cun-jie-gou-he-shi-xian/</id>
+        <link href="https://yuehuajiang.github.io/post/xian-xing-biao-de-shun-xu-chu-cun-jie-gou-he-shi-xian/">
+        </link>
+        <updated>2020-03-01T03:31:42.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="完整程序如果你比较懒就不用往下看了">完整程序(如果你比较懒就不用往下看了)</h2>
+<p>DEV C++编译环境</p>
+<pre><code class="language-c"> #include&lt;stdlib.h&gt;
+ #include&lt;stdio.h&gt;
+ typedef int ElemType;
+
+
+//线性表的顺序定义
+typedef struct seqList
+{
+	int n;
+	int maxLength;
+	ElemType *element;
+ } SeqList;
+
+
+//顺序表的初始化 
+#define ERROR 0
+#define OK 1
+#define OverFlow 2//上溢 
+#define UnderFlow 3//下溢 
+#define NotPresent 4//元素不存在 
+#define Duplicate 5//有重复元素 
+typedef int Status;
+Status Init (SeqList *L,int mSize)
+{
+	L-&gt;maxLength=mSize;
+	L-&gt;n=0;
+	L-&gt;element=(ElemType*)malloc(sizeof(ElemType)*mSize);//动态生成一维数组空间 
+	if(!L-&gt;element)
+		return ERROR;
+	return OK; 
+ } 
+ 
+ 
+ //顺序表的查找
+ Status Find(SeqList L,int i,ElemType *x)
+ {
+ 	if(i&lt;0||i&gt;L.n-1)//判断元素下标i是否越界 
+		return ERROR; 
+	*x=L.element[i];//取出element[i]值通过参数x返回 
+	return OK;
+  } 
+  
+//顺序表的元素插入
+Status Insert(SeqList*L,int i,ElemType x)
+{
+	int j;
+	if(i&lt;-1||i&gt;L-&gt;n-1)//判断下标是否越界 
+		return ERROR;
+	if(L-&gt;n==L-&gt;maxLength)//判断顺序表存储空间是否已满 
+		return ERROR;
+	for(j=L-&gt;n-1;j&gt;i;j--)
+		L-&gt;element[j+1]=L-&gt;element[j];//从前往后逐个后移元素
+	L-&gt;element[j+1]=L-&gt;element[j];
+	L-&gt;element[i+1]=x;
+	L-&gt;n=L-&gt;n+1;
+	return OK;
+	 
+ } 
+Status Delete(SeqList *L,int i)
+{
+	int j;
+	if(i&lt;0||i&gt;L-&gt;n-1)//下标i是否越界 
+		return ERROR;
+	if(!L-&gt;n)		//顺序表是否为空 
+		return ERROR; 
+	for(j=i+1;j&lt;L-&gt;n;j++)
+		L-&gt;element[j-1]=L-&gt;element[j];//从前往后逐个前移元素 
+	L-&gt;n--;			//表长减一 
+	return OK;
+}
+ 
+ 
+ //顺序表的输出
+ Status Output(SeqList *L)
+ {
+ 	int i;
+ 	if(L-&gt;n==0)//判断顺序表是否为空 
+ 		return ERROR;
+	for(i=0;i&lt;=L-&gt;n-1;i++)
+		printf(&quot;%d&quot;,L-&gt;element [i]);
+	printf(&quot;\n&quot;);
+	return OK; 
+  } 
+ //顺序表的撤销
+ void Destroy(SeqList *L)
+ {
+ 	L-&gt;n=0;
+ 	L-&gt;maxLength=0;
+ 	free(L-&gt;element);
+  } 
+ //主函数
+main()
+{
+	int i;
+	SeqList list;
+	
+	Init(&amp;list,10);//初始化线性表 
+	
+	for(i=0;i&lt;10;i++)
+		Insert(&amp;list,i-1,i);//线性表中插入新元素
+	Output(&amp;list);
+	
+	Delete(&amp;list,0);
+	Output(&amp;list); 
+	Destroy(&amp;list);	
+}
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://yuehuajiang.github.io/post-images/1583033551748.png" alt="" loading="lazy"></figure>
+<p>正文开始</p>
+<h2 id="线性表的顺序储存结构">线性表的顺序储存结构</h2>
+<h4 id="线性表的顺序定义如下">线性表的顺序定义如下</h4>
+<pre><code class="language-c">typedef struct seqList
+{
+	int n;//顺序表的长度
+	int maxLength;//顺序表的最大允许长度
+	ElemType *element;//顺序表的储存空间的首地址
+ } SeqList;
+</code></pre>
+<p>ElemType是自定义类型，你可以通过 typedef int ElemType将其转化为int型或者转化为你需要的任意数据类型。</p>
+<h2 id="顺序表基本运算的实现">顺序表基本运算的实现</h2>
+<h4 id="顺序表的初始化">顺序表的初始化</h4>
+<pre><code class="language-c">#define ERROR 0
+#define OK 1
+#define OverFlow 2//上溢 
+#define UnderFlow 3//下溢 
+#define NotPresent 4//元素不存在 
+#define Duplicate 5//有重复元素 
+typedef int Status;
+Status Init (SeqList *L,int mSize)
+{
+	L-&gt;maxLength=mSize;
+	L-&gt;n=0;
+	L-&gt;element=(ElemType*)malloc(sizeof(ElemType)*mSize);//动态生成一维数组空间 
+	if(!L-&gt;element)
+		return ERROR;
+	return OK; 
+ } 
+</code></pre>
+<h4 id="顺序表的查找">顺序表的查找</h4>
+<pre><code class="language-c"> Status Find(SeqList L,int i,ElemType *x)
+ {
+ 	if(i&lt;0||i&gt;L.n-1)//判断元素下标i是否越界 
+		return ERROR; 
+	*x=L.element[i];//取出element[i]值通过参数x返回 
+	return OK;
+  }
+</code></pre>
+<h4 id="顺序表的元素插入">顺序表的元素插入</h4>
+<pre><code class="language-c">Status Insert(SeqList*L,int i,ElemType x)
+{
+	int j;
+	if(i&lt;-1||i&gt;L-&gt;n-1)//判断下标是否越界 
+		return ERROR;
+	if(L-&gt;n==L-&gt;maxLength)//判断顺序表存储空间是否已满 
+		return ERROR;
+	for(j=L-&gt;n-1;j&gt;i;j--)
+		L-&gt;element[j+1]=L-&gt;element[j];//从前往后逐个后移元素
+	L-&gt;element[j+1]=L-&gt;element[j];
+	L-&gt;element[i+1]=x;
+	L-&gt;n=L-&gt;n+1;
+	return OK;
+	 
+ } 
+</code></pre>
+<h4 id="顺序表的元素删除">顺序表的元素删除</h4>
+<pre><code class="language-c">Status Delete(SeqList *L,int i)
+{
+	int j;
+	if(i&lt;0||i&gt;L-&gt;n-1)//下标i是否越界 
+		return ERROR;
+	if(!L-&gt;n)		//顺序表是否为空 
+		return ERROR; 
+	for(j=i+1;j&lt;L-&gt;n;j++)
+		L-&gt;element[j-1]=L-&gt;element[j];//从前往后逐个前移元素 
+	L-&gt;n--;			//表长减一 
+	return OK;
+}
+</code></pre>
+<h4 id="顺序表的输出">顺序表的输出</h4>
+<pre><code class="language-c"> Status Output(SeqList *L)
+ {
+ 	int i;
+ 	if(L-&gt;n==0)//判断顺序表是否为空 
+ 		return ERROR;
+	for(i=0;i&lt;=L-&gt;n-1;i++)
+		printf(&quot;%d&quot;,L-&gt;element [i]);
+	printf(&quot;\n&quot;);
+	return OK; 
+  } 
+</code></pre>
+<h4 id="顺序表的撤销">顺序表的撤销</h4>
+<pre><code class="language-c"> void Destroy(SeqList *L)
+ {
+ 	L-&gt;n=0;
+ 	L-&gt;maxLength=0;
+ 	free(L-&gt;element);
+  } 
+</code></pre>
+<h4 id=""></h4>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[顺序表课后习题]]></title>
         <id>https://yuehuajiang.github.io/post/shun-xu-biao-ke-hou-xi-ti/</id>
