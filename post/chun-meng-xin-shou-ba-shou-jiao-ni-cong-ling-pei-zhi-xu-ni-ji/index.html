@@ -1,0 +1,314 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title> 纯萌新手把手教你从零配置虚拟机 | 抗马拉硫磷的小菜蛾</title>
+<link rel="shortcut icon" href="https://yuehuajiang.github.io/favicon.ico?v=1583218381834">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://yuehuajiang.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title=" 纯萌新手把手教你从零配置虚拟机 | 抗马拉硫磷的小菜蛾 - Atom Feed" href="https://yuehuajiang.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="实验目的：逆向分析平台搭建
+实验步骤：
+（1）	下载虚拟机软件（如Vmware、VirtualBox等）并安装。（建议用免费的VirtualBox）
+（2）	利用已安装的虚拟机软件，架设一台Windows XP虚拟机。
+（3）	在WinXP..." />
+    <meta name="keywords" content="逆向分析" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://yuehuajiang.github.io">
+  <img class="avatar" src="https://yuehuajiang.github.io/images/avatar.png?v=1583218381834" alt="">
+  </a>
+  <h1 class="site-title">
+    抗马拉硫磷的小菜蛾
+  </h1>
+  <p class="site-description">
+    自是人生长恨水长东
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+               纯萌新手把手教你从零配置虚拟机
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-03-03
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+                <a href="https://yuehuajiang.github.io/tag/3INQ2HHRm/" class="post-tag">
+                  # 逆向分析
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://yuehuajiang.github.io/post-images/chun-meng-xin-shou-ba-shou-jiao-ni-cong-ling-pei-zhi-xu-ni-ji.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h3 id="实验目的逆向分析平台搭建">实验目的：逆向分析平台搭建</h3>
+<p>实验步骤：</p>
+<p>（1）	下载虚拟机软件（如Vmware、VirtualBox等）并安装。（建议用免费的VirtualBox）</p>
+<p>（2）	利用已安装的虚拟机软件，架设一台Windows XP虚拟机。</p>
+<p>（3）	在WinXP虚拟机中下载安装Winhex或Ultraedit，然后测试是否能运行。</p>
+<p>（4）	在WinXP虚拟机中下载安装OllyDbg，然后测试是否能运行。</p>
+<p>（5）	在WinXP虚拟机中下载安装IDA Pro，然后测试是否能运行。</p>
+<p>（6）	在WinXP虚拟机中下载安装WinDbg，然后测试是否能运行。</p>
+<p>（7）	在WinXP虚拟机中下载安装PEiD，然后测试是否能运行。</p>
+<p>（8）	在WinXP虚拟机中下载安装eXeScope，然后测试是否能运行。</p>
+<p>（9）	关闭之前打开的应用程序，创建虚拟机快照。</p>
+<h2 id="虚拟机装配过程">虚拟机装配过程</h2>
+<h3 id="windows-xp镜像文件">Windows XP镜像文件</h3>
+<p>想要装系统，必须得有镜像文件</p>
+<p>新建文件夹（<strong>记住路径</strong>，一会装系统的时候还得用），将下载好的压缩包保存在里面（<strong>不用解压</strong>）</p>
+<p>复制这段内容后打开百度网盘手机App，操作更方便哦</p>
+<p>链接:https://pan.baidu.com/s/1DO0bKkYQI2zP0lX-MgvlUw</p>
+<p>提取码:017x</p>
+<h3 id="vmware虚拟机装配过程">VMware虚拟机装配过程</h3>
+<p><a href="https://blog.csdn.net/nicergj/article/details/83651603"></a></p>
+<h3 id="virtualbox虚拟机装配过程">VirtualBox虚拟机装配过程</h3>
+<p>http://www.soreatu.com/essay/Reverse%20Engineering%20Environment%20Setup.html</p>
+<h2 id="虚拟机装配排雷">虚拟机装配排雷</h2>
+<p>关于具体怎么装配，大佬们在博客里已经说的很清楚了</p>
+<p>下面由我来给大家肉身排雷</p>
+<h3 id="virtualbox区">VirtualBox区</h3>
+<h4 id="雷区一镜像文件">雷区一：镜像文件</h4>
+<p>虚拟机想有系统，必然要有镜像文件</p>
+<p>ISO文件下载好<strong>不用解压</strong>，<strong>记住路径</strong>，虚拟光盘导入</p>
+<p><strong>路径里不要有中文</strong></p>
+<h4 id="雷区二bios">雷区二：BIOS</h4>
+<p>如果你启动虚拟机，闪退，然后弹出这个，那就是需要设置BIOS</p>
+<figure data-type="image" tabindex="1"><img src="https://yuehuajiang.github.io/post-images/1583218211581.jpg" alt="" loading="lazy"></figure>
+<p><strong>如何进入BIOS?</strong></p>
+<p>https://zhuanlan.zhihu.com/p/34223088</p>
+<p>看这个，千万不要去彪手速，Win10有这个功能</p>
+<p><strong>进到BIOS中要怎样设置呢？</strong></p>
+<p>https://blog.csdn.net/zyw0101/article/details/90699127</p>
+<p>看这个，进去之后可能和文章里写的不一样，可能会是英文，慢慢对照着找，别着急。</p>
+<h4 id="雷区三不能上网">雷区三：不能上网</h4>
+<p>如果是你的网卡有问题，可以安装驱动精灵</p>
+<p>​			https://blog.csdn.net/zhaohansk/article/details/78246876</p>
+<p>如果不是网卡的问题</p>
+<figure data-type="image" tabindex="2"><img src="https://yuehuajiang.github.io/post-images/1583218226736.png" alt="" loading="lazy"></figure>
+<p>选择NET(第一个)</p>
+<p>如果不行，可以选择桥接网卡，但是我没有找到具体怎么设置。你可以自己上网去搜一搜。</p>
+<p>别着急，很多人都有同样的问题，慢慢来</p>
+<h4 id="雷区四显示连上网络了但是打不开浏览器">雷区四：显示连上网络了，但是打不开浏览器</h4>
+<p>你可以换一个浏览器试试，IE现在很多网站不支持</p>
+<p>重启一下电脑试试（主机和虚拟机）</p>
+<p>如果还是不行（我现在就处于这个状态），也没关系，你可以下好了东西通过共享文件夹传到虚拟机里（共享文件夹上面的教程里都有）。</p>
+<h3 id="vmware区">VMware区</h3>
+<p>如果你在VirtualBox区已经把雷都排掉了，VMware可能用起来会更流畅</p>
+<h4 id="雷区一没有权限">雷区一：没有权限</h4>
+<p>​	右键，以管理员身份打开就行</p>
+<h4 id="雷区二强制推出导致报错">雷区二：强制推出导致报错</h4>
+<p>虽然VMware有VMtool可以直接拖动文件，但是如果卡了，<strong>千万不要</strong>任务管理器直接强制推出，多等一会</p>
+<p>解决办法：（试试吧，虽然对我没什么效果，但是可能对你有用）</p>
+<p>https://www.sohu.com/a/330655347_609556</p>
+<h3 id="软件安装区">软件安装区</h3>
+<h4 id="雷区一下载不到软件">雷区一：下载不到软件</h4>
+<p>如果教程里的网址打不开，或者下载不下来</p>
+<p>可以在这里下</p>
+<p>http://xiazai.zol.com.cn/</p>
+<h4 id="雷区二版本">雷区二：版本</h4>
+<p>有很多软件新版本不支持XP系统，记得去下老版本（比如IDA）</p>
+<h2 id="后记">后记</h2>
+<p>如果你一次性成功了，那么恭喜你；</p>
+<p>如果你出现了雷区中的问题，那么希望我的文章能帮到你；</p>
+<p>如果你出现了新的问题，请上网搜索，请询问你的老师和同学；</p>
+<p>每解决一个问题，这都是你的财富，加油！💪</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84%E9%80%86%E5%90%91%E5%88%86%E6%9E%90%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA">实验目的：逆向分析平台搭建</a></li>
+</ul>
+</li>
+<li><a href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%A3%85%E9%85%8D%E8%BF%87%E7%A8%8B">虚拟机装配过程</a>
+<ul>
+<li><a href="#windows-xp%E9%95%9C%E5%83%8F%E6%96%87%E4%BB%B6">Windows XP镜像文件</a></li>
+<li><a href="#vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%A3%85%E9%85%8D%E8%BF%87%E7%A8%8B">VMware虚拟机装配过程</a></li>
+<li><a href="#virtualbox%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%A3%85%E9%85%8D%E8%BF%87%E7%A8%8B">VirtualBox虚拟机装配过程</a></li>
+</ul>
+</li>
+<li><a href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%A3%85%E9%85%8D%E6%8E%92%E9%9B%B7">虚拟机装配排雷</a>
+<ul>
+<li><a href="#virtualbox%E5%8C%BA">VirtualBox区</a>
+<ul>
+<li><a href="#%E9%9B%B7%E5%8C%BA%E4%B8%80%E9%95%9C%E5%83%8F%E6%96%87%E4%BB%B6">雷区一：镜像文件</a></li>
+<li><a href="#%E9%9B%B7%E5%8C%BA%E4%BA%8Cbios">雷区二：BIOS</a></li>
+<li><a href="#%E9%9B%B7%E5%8C%BA%E4%B8%89%E4%B8%8D%E8%83%BD%E4%B8%8A%E7%BD%91">雷区三：不能上网</a></li>
+<li><a href="#%E9%9B%B7%E5%8C%BA%E5%9B%9B%E6%98%BE%E7%A4%BA%E8%BF%9E%E4%B8%8A%E7%BD%91%E7%BB%9C%E4%BA%86%E4%BD%86%E6%98%AF%E6%89%93%E4%B8%8D%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8">雷区四：显示连上网络了，但是打不开浏览器</a></li>
+</ul>
+</li>
+<li><a href="#vmware%E5%8C%BA">VMware区</a>
+<ul>
+<li><a href="#%E9%9B%B7%E5%8C%BA%E4%B8%80%E6%B2%A1%E6%9C%89%E6%9D%83%E9%99%90">雷区一：没有权限</a></li>
+<li><a href="#%E9%9B%B7%E5%8C%BA%E4%BA%8C%E5%BC%BA%E5%88%B6%E6%8E%A8%E5%87%BA%E5%AF%BC%E8%87%B4%E6%8A%A5%E9%94%99">雷区二：强制推出导致报错</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8C%BA">软件安装区</a>
+<ul>
+<li><a href="#%E9%9B%B7%E5%8C%BA%E4%B8%80%E4%B8%8B%E8%BD%BD%E4%B8%8D%E5%88%B0%E8%BD%AF%E4%BB%B6">雷区一：下载不到软件</a></li>
+<li><a href="#%E9%9B%B7%E5%8C%BA%E4%BA%8C%E7%89%88%E6%9C%AC">雷区二：版本</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%90%8E%E8%AE%B0">后记</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://yuehuajiang.github.io/post/xian-xing-biao-de-shun-xu-chu-cun-jie-gou-he-shi-xian/">
+              <h3 class="post-title">
+                线性表的顺序储存结构和实现
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://yuehuajiang.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

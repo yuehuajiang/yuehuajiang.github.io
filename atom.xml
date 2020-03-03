@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuehuajiang.github.io</id>
     <title>抗马拉硫磷的小菜蛾</title>
-    <updated>2020-03-03T01:54:02.123Z</updated>
+    <updated>2020-03-03T06:53:05.263Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuehuajiang.github.io"/>
     <link rel="self" href="https://yuehuajiang.github.io/atom.xml"/>
@@ -10,6 +10,85 @@
     <logo>https://yuehuajiang.github.io/images/avatar.png</logo>
     <icon>https://yuehuajiang.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 抗马拉硫磷的小菜蛾</rights>
+    <entry>
+        <title type="html"><![CDATA[ 纯萌新手把手教你从零配置虚拟机]]></title>
+        <id>https://yuehuajiang.github.io/post/chun-meng-xin-shou-ba-shou-jiao-ni-cong-ling-pei-zhi-xu-ni-ji/</id>
+        <link href="https://yuehuajiang.github.io/post/chun-meng-xin-shou-ba-shou-jiao-ni-cong-ling-pei-zhi-xu-ni-ji/">
+        </link>
+        <updated>2020-03-03T06:49:30.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="实验目的逆向分析平台搭建">实验目的：逆向分析平台搭建</h3>
+<p>实验步骤：</p>
+<p>（1）	下载虚拟机软件（如Vmware、VirtualBox等）并安装。（建议用免费的VirtualBox）</p>
+<p>（2）	利用已安装的虚拟机软件，架设一台Windows XP虚拟机。</p>
+<p>（3）	在WinXP虚拟机中下载安装Winhex或Ultraedit，然后测试是否能运行。</p>
+<p>（4）	在WinXP虚拟机中下载安装OllyDbg，然后测试是否能运行。</p>
+<p>（5）	在WinXP虚拟机中下载安装IDA Pro，然后测试是否能运行。</p>
+<p>（6）	在WinXP虚拟机中下载安装WinDbg，然后测试是否能运行。</p>
+<p>（7）	在WinXP虚拟机中下载安装PEiD，然后测试是否能运行。</p>
+<p>（8）	在WinXP虚拟机中下载安装eXeScope，然后测试是否能运行。</p>
+<p>（9）	关闭之前打开的应用程序，创建虚拟机快照。</p>
+<h2 id="虚拟机装配过程">虚拟机装配过程</h2>
+<h3 id="windows-xp镜像文件">Windows XP镜像文件</h3>
+<p>想要装系统，必须得有镜像文件</p>
+<p>新建文件夹（<strong>记住路径</strong>，一会装系统的时候还得用），将下载好的压缩包保存在里面（<strong>不用解压</strong>）</p>
+<p>复制这段内容后打开百度网盘手机App，操作更方便哦</p>
+<p>链接:https://pan.baidu.com/s/1DO0bKkYQI2zP0lX-MgvlUw</p>
+<p>提取码:017x</p>
+<h3 id="vmware虚拟机装配过程">VMware虚拟机装配过程</h3>
+<p><a href="https://blog.csdn.net/nicergj/article/details/83651603"></a></p>
+<h3 id="virtualbox虚拟机装配过程">VirtualBox虚拟机装配过程</h3>
+<p>http://www.soreatu.com/essay/Reverse%20Engineering%20Environment%20Setup.html</p>
+<h2 id="虚拟机装配排雷">虚拟机装配排雷</h2>
+<p>关于具体怎么装配，大佬们在博客里已经说的很清楚了</p>
+<p>下面由我来给大家肉身排雷</p>
+<h3 id="virtualbox区">VirtualBox区</h3>
+<h4 id="雷区一镜像文件">雷区一：镜像文件</h4>
+<p>虚拟机想有系统，必然要有镜像文件</p>
+<p>ISO文件下载好<strong>不用解压</strong>，<strong>记住路径</strong>，虚拟光盘导入</p>
+<p><strong>路径里不要有中文</strong></p>
+<h4 id="雷区二bios">雷区二：BIOS</h4>
+<p>如果你启动虚拟机，闪退，然后弹出这个，那就是需要设置BIOS</p>
+<figure data-type="image" tabindex="1"><img src="https://yuehuajiang.github.io/post-images/1583218211581.jpg" alt="" loading="lazy"></figure>
+<p><strong>如何进入BIOS?</strong></p>
+<p>https://zhuanlan.zhihu.com/p/34223088</p>
+<p>看这个，千万不要去彪手速，Win10有这个功能</p>
+<p><strong>进到BIOS中要怎样设置呢？</strong></p>
+<p>https://blog.csdn.net/zyw0101/article/details/90699127</p>
+<p>看这个，进去之后可能和文章里写的不一样，可能会是英文，慢慢对照着找，别着急。</p>
+<h4 id="雷区三不能上网">雷区三：不能上网</h4>
+<p>如果是你的网卡有问题，可以安装驱动精灵</p>
+<p>​			https://blog.csdn.net/zhaohansk/article/details/78246876</p>
+<p>如果不是网卡的问题</p>
+<figure data-type="image" tabindex="2"><img src="https://yuehuajiang.github.io/post-images/1583218226736.png" alt="" loading="lazy"></figure>
+<p>选择NET(第一个)</p>
+<p>如果不行，可以选择桥接网卡，但是我没有找到具体怎么设置。你可以自己上网去搜一搜。</p>
+<p>别着急，很多人都有同样的问题，慢慢来</p>
+<h4 id="雷区四显示连上网络了但是打不开浏览器">雷区四：显示连上网络了，但是打不开浏览器</h4>
+<p>你可以换一个浏览器试试，IE现在很多网站不支持</p>
+<p>重启一下电脑试试（主机和虚拟机）</p>
+<p>如果还是不行（我现在就处于这个状态），也没关系，你可以下好了东西通过共享文件夹传到虚拟机里（共享文件夹上面的教程里都有）。</p>
+<h3 id="vmware区">VMware区</h3>
+<p>如果你在VirtualBox区已经把雷都排掉了，VMware可能用起来会更流畅</p>
+<h4 id="雷区一没有权限">雷区一：没有权限</h4>
+<p>​	右键，以管理员身份打开就行</p>
+<h4 id="雷区二强制推出导致报错">雷区二：强制推出导致报错</h4>
+<p>虽然VMware有VMtool可以直接拖动文件，但是如果卡了，<strong>千万不要</strong>任务管理器直接强制推出，多等一会</p>
+<p>解决办法：（试试吧，虽然对我没什么效果，但是可能对你有用）</p>
+<p>https://www.sohu.com/a/330655347_609556</p>
+<h3 id="软件安装区">软件安装区</h3>
+<h4 id="雷区一下载不到软件">雷区一：下载不到软件</h4>
+<p>如果教程里的网址打不开，或者下载不下来</p>
+<p>可以在这里下</p>
+<p>http://xiazai.zol.com.cn/</p>
+<h4 id="雷区二版本">雷区二：版本</h4>
+<p>有很多软件新版本不支持XP系统，记得去下老版本（比如IDA）</p>
+<h2 id="后记">后记</h2>
+<p>如果你一次性成功了，那么恭喜你；</p>
+<p>如果你出现了雷区中的问题，那么希望我的文章能帮到你；</p>
+<p>如果你出现了新的问题，请上网搜索，请询问你的老师和同学；</p>
+<p>每解决一个问题，这都是你的财富，加油！💪</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[线性表的顺序储存结构和实现]]></title>
         <id>https://yuehuajiang.github.io/post/xian-xing-biao-de-shun-xu-chu-cun-jie-gou-he-shi-xian/</id>
