@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuehuajiang.github.io</id>
     <title>抗马拉硫磷的小菜蛾</title>
-    <updated>2020-03-04T10:12:08.959Z</updated>
+    <updated>2020-03-04T10:43:28.649Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuehuajiang.github.io"/>
     <link rel="self" href="https://yuehuajiang.github.io/atom.xml"/>
@@ -10,6 +10,41 @@
     <logo>https://yuehuajiang.github.io/images/avatar.png</logo>
     <icon>https://yuehuajiang.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 抗马拉硫磷的小菜蛾</rights>
+    <entry>
+        <title type="html"><![CDATA[# 纯萌新手把手教你从零开始搭建自己的博客]]></title>
+        <id>https://yuehuajiang.github.io/post/chun-meng-xin-shou-ba-shou-jiao-ni-cong-ling-kai-shi-da-jian-zi-ji-de-bo-ke/</id>
+        <link href="https://yuehuajiang.github.io/post/chun-meng-xin-shou-ba-shou-jiao-ni-cong-ling-kai-shi-da-jian-zi-ji-de-bo-ke/">
+        </link>
+        <updated>2020-03-04T10:42:01.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="方法一gridea推荐">方法一：Gridea(推荐)</h2>
+<p>如果你是真的是像我一样的纯萌新，不是那种谦虚的大佬，那么不用想了，Gridea是你最好的选择。</p>
+<p>不如先看看原作者的教程</p>
+<p><a href="https://fehey.com/post/hve-notes-start/">https://fehey.com/post/hve-notes-start/</a></p>
+<p>但是记得一点,CNAME如果没有,就不要写</p>
+<p>如果不知道链接到哪里去了,就会找不到IP地址</p>
+<p>如果这种事还是发生了,别着急,请参见方法二里的配置自定义域名并免费使用HTTPS</p>
+<p>这里还有其他人的教程,在使用过程中可以参考</p>
+<p><a href="https://sspai.com/post/54212">https://sspai.com/post/54212</a></p>
+<p><a href="https://ak-ioi.blog.luogu.org/building-a-blog#">https://ak-ioi.blog.luogu.org/building-a-blog#</a></p>
+<h2 id="方法二github-page">方法二:GitHub Page</h2>
+<p>第二种方法就是自己搭建,不是很推荐萌新使用</p>
+<p>不过你要是有一定的网络基础或者想完全按照自己的想法配置自己的博客,那么也未尝不可</p>
+<p><a href="https://sspai.com/post/54608">https://sspai.com/post/54608</a></p>
+<h2 id="博客搭建排雷">博客搭建排雷</h2>
+<h3 id="雷区一更改了cname之后找不到博客的ip地址">雷区一:更改了CNAME之后找不到博客的IP地址</h3>
+<p>CNAME如果没有,<strong>就不要写</strong>,因为你不知道会发生什么(没错,就是我)<br>
+<img src="https://yuehuajiang.github.io/post-images/1583318554707.png" alt="" loading="lazy"></p>
+<p>如果不知道链接到哪里去了,就会找不到IP地址</p>
+<p>如果这种事还是发生了,别着急,请参见方法二里的配置自定义域名并免费使用HTTPS</p>
+<p>你可以在阿里云或者腾讯云买一个域名解析(连接)到你的博客解决这个问题</p>
+<h3 id="雷区二打不开评论区">雷区二:打不开评论区</h3>
+<p>对不起,这个问题我也正在解决</p>
+<h2 id="后记">后记</h2>
+<p>都说每个程序员都应有自己的博客</p>
+<p>现在</p>
+<p>我有了,你呢?😊</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ 纯萌新手把手教你从零开始配置虚拟机]]></title>
         <id>https://yuehuajiang.github.io/post/chun-meng-xin-shou-ba-shou-jiao-ni-cong-ling-pei-zhi-xu-ni-ji/</id>
