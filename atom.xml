@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://http://www.yuehuajiang.xyz/?tdsourcetag=s_pctim_aiomsg</id>
     <title>抗马拉硫磷的小菜蛾</title>
-    <updated>2020-03-04T15:04:16.598Z</updated>
+    <updated>2020-03-05T00:15:15.019Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://http://www.yuehuajiang.xyz/?tdsourcetag=s_pctim_aiomsg"/>
     <link rel="self" href="http://http://www.yuehuajiang.xyz?tdsourcetag=s_pctim_aiomsg/atom.xml"/>
@@ -10,6 +10,18 @@
     <logo>http://http://www.yuehuajiang.xyz?tdsourcetag=s_pctim_aiomsg/images/avatar.png</logo>
     <icon>http://http://www.yuehuajiang.xyz?tdsourcetag=s_pctim_aiomsg/favicon.ico</icon>
     <rights>All rights reserved 2020, 抗马拉硫磷的小菜蛾</rights>
+    <entry>
+        <title type="html"><![CDATA[更新日志]]></title>
+        <id>http://http://www.yuehuajiang.xyz?tdsourcetag=s_pctim_aiomsg/post/geng-xin-ri-zhi/</id>
+        <link href="http://http://www.yuehuajiang.xyz?tdsourcetag=s_pctim_aiomsg/post/geng-xin-ri-zhi/">
+        </link>
+        <updated>2020-03-05T00:14:51.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>版本1.0</strong></p>
+<p>*将域名里的http去掉</p>
+<p>*添加底部信息</p>
+<p>*将代码插在第一个div下面</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ 纯萌新手把手教你从零开始搭建自己的博客]]></title>
         <id>http://http://www.yuehuajiang.xyz?tdsourcetag=s_pctim_aiomsg/post/chun-meng-xin-shou-ba-shou-jiao-ni-cong-ling-kai-shi-da-jian-zi-ji-de-bo-ke/</id>
