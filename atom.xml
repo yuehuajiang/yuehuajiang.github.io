@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuehuajiang.github.io</id>
     <title>抗马拉硫磷的小菜蛾</title>
-    <updated>2020-03-05T07:12:16.172Z</updated>
+    <updated>2020-03-05T09:47:06.316Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuehuajiang.github.io"/>
     <link rel="self" href="https://yuehuajiang.github.io/atom.xml"/>
@@ -174,8 +174,8 @@ int  main()
 	
 }
 </code></pre>
-<p><strong>运行效果</strong><br>
-<img src="https://yuehuajiang.github.io/post-images/1583392274755.png" alt="" loading="lazy"></p>
+<p><strong>运行效果</strong></p>
+<figure data-type="image" tabindex="1"><img src="C:%5CUsers%5C32122%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200305150049994.png" alt="image-20200305150049994" loading="lazy"></figure>
 <h2 id="单链表的定义和表示">单链表的定义和表示</h2>
 <p>单链表的类型定义如下</p>
 <pre><code class="language-c">typedef struct node
@@ -318,6 +318,103 @@ void Destroy(SingleList *L)
 		L-&gt;first=p;
 	}
  } 
+</code></pre>
+<h2 id="带表头的链表">带表头的链表</h2>
+<p>带表头就是头节点和普通结点一样了</p>
+<h3 id="类型定义">类型定义</h3>
+<pre><code class="language-c">typedef struct headerList 
+{
+	Node *first;
+	int n;
+}HeaderList;
+</code></pre>
+<h3 id="初始化-2">初始化</h3>
+<pre><code class="language-c">//带表头节点的初始化
+#define ERROR 0
+#define OK 1
+#define OverFlow 2//上溢 
+#define UnderFlow 3//下溢 
+#define NotPresent 4//元素不存在 
+#define Duplicate 5//有重复元素 
+typedef int Status;
+Status Init(HeaderList *h)
+{
+	h-&gt;head=(Node*)malloc(sizeof(Node));
+	if(!h-&gt;head)
+		return ERROR;
+	h-&gt;head-&gt;link=NULL;
+	h-&gt;n=0; 
+	return OK;
+ } 
+</code></pre>
+<h3 id="插入-2">插入</h3>
+<pre><code class="language-c"> //带表头插入
+   Status Insert(HeaderList *h,int i,ElemType x)
+  {
+  	Node *p,*q;
+  	int j;
+  	if(i&lt;-1||i&gt;h-&gt;n-1)
+  		return ERROR;
+  	p=L-&gt;head;
+  	for(j=0;j&lt;i;j++)
+	  	p=p-&gt;link;//从头开始查找ai 
+  	q=(Node*)malloc(sizeof(Node));//生成新节点q 
+  	q-&gt;element=x;
+  	q-&gt;link=p-&gt;link;//新节点插在p所指节点后面 
+  	p-&gt;link=q;
+
+	h-&gt;n++;
+	 return OK; 
+   } 
+</code></pre>
+<h3 id="删除-2">删除</h3>
+<pre><code class="language-c"> //带表头删除
+Status Delete(HeaderList *h,int i)
+{
+	int j;
+	Node *p,*q;
+	if(!h-&gt;n)
+		return ERROR;
+  	if(i&lt;-1||i&gt;h-&gt;n-1)
+  		return ERROR;
+  	q=h-&gt;first;
+  	for(j=0;j&lt;i;j++)
+  		q=q-&gt;link;
+  	
+  		p=q-&gt;link;//p指向ai 
+  		q-&gt;link=p-&gt;link;//从单链表中删除p所指的节点 
+
+	  free(p);
+	  L-&gt;n--;
+	  return OK; 
+ }  
+</code></pre>
+<h2 id="单循环链表">单循环链表</h2>
+<p><strong>用单链表中最后一个节点的指针域存储头节点的地址，使得整个单链表形成一个环，这种头尾相接的单链表成为单循环链表。</strong></p>
+<h2 id="双向链表">双向链表</h2>
+<p><strong>每一个结点都可以找到他的前驱结点和后继结点</strong></p>
+<h3 id="双向链表的储存结构">双向链表的储存结构</h3>
+<pre><code class="language-c">//双向链表的储存结构定义
+typedef struct duNode
+{
+	ElemType element;//结点的数据域 
+	struct duNode *llink;//结点的左指针域，存储直接前驱结点的地址 
+	struct duNode *rlink;//结点的右指针域，存储直接后驱结点的地址 
+ }DuNode,DuList;
+</code></pre>
+<h3 id="双向链表的插入">双向链表的插入</h3>
+<pre><code class="language-c">//双向链表的插入运算的核心代码
+
+q-&gt;lLink=p-&gt;lLink;
+q-&gt;rLink=p;
+p-&gt;lLink-&gt;rLink=q;
+p-&gt;lLink=q;
+</code></pre>
+<h3 id="双向链表的删除">双向链表的删除</h3>
+<pre><code class="language-c">//双向链表的删除
+p-&gt;lLink-&gt;rLink=p-&gt;rLink;
+p-&gt;rLink-&gt;lLink=P-&gt;lLink;
+free(p);
 </code></pre>
 ]]></content>
     </entry>
