@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuehuajiang.github.io</id>
     <title>抗马拉硫磷的小菜蛾</title>
-    <updated>2020-03-05T01:19:25.707Z</updated>
+    <updated>2020-03-05T07:12:16.172Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuehuajiang.github.io"/>
     <link rel="self" href="https://yuehuajiang.github.io/atom.xml"/>
@@ -10,6 +10,317 @@
     <logo>https://yuehuajiang.github.io/images/avatar.png</logo>
     <icon>https://yuehuajiang.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 抗马拉硫磷的小菜蛾</rights>
+    <entry>
+        <title type="html"><![CDATA[线性表的链式存储结构和实现]]></title>
+        <id>https://yuehuajiang.github.io/post/xian-xing-biao-de-lian-shi-cun-chu-jie-gou-he-shi-xian/</id>
+        <link href="https://yuehuajiang.github.io/post/xian-xing-biao-de-lian-shi-cun-chu-jie-gou-he-shi-xian/">
+        </link>
+        <updated>2020-03-05T07:10:24.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="完整程序如果你比较懒就不用往下看了">完整程序(如果你比较懒就不用往下看了)</h2>
+<p>DEV C++编译环境</p>
+<pre><code class="language-c"> #include&lt;stdlib.h&gt;
+ #include&lt;stdio.h&gt;
+ typedef int ElemType;
+//单链表的类型定义 
+typedef struct node
+{
+	ElemType element;
+	struct node *link; 
+}Node;
+typedef struct singleList
+{
+	Node *first;
+	int n;
+}SingleList;
+
+//单链表的初始化
+#define ERROR 0
+#define OK 1
+#define OverFlow 2//上溢 
+#define UnderFlow 3//下溢 
+#define NotPresent 4//元素不存在 
+#define Duplicate 5//有重复元素 
+typedef int Status;
+Status Init(SingleList *L)
+{
+	L-&gt;first=NULL;
+	L-&gt;n=0;
+	return OK;
+ } 
+ 
+ //单链表的查找
+ Status Find(SingleList *L,int i,ElemType *x)
+ {
+ 	Node *p;
+ 	int j;
+ 	if(i&lt;0||i&gt; L-&gt;n-1)//对i进行越界检查 
+ 		return ERROR;
+ 	p=L-&gt;first;
+ 	for(j=0;j&lt;i;j++)
+ 		p=p-&gt;link;//从头节点开始查找ai 
+ 	*x=p-&gt;element;//通过x返回ai的值 
+ 	return OK;
+  } 
+  
+  //单链表的插入
+  Status Insert(SingleList *L,int i,ElemType x)
+  {
+  	Node *p,*q;
+  	int j;
+  	if(i&lt;-1||i&gt;L-&gt;n-1)
+  		return ERROR;
+  	p=L-&gt;first;
+  	for(j=0;j&lt;i;j++)
+	  	p=p-&gt;link;//从头开始查找ai 
+  		q=(Node*)malloc(sizeof(Node));//生成新节点q 
+  	q-&gt;element=x;
+  	if(i&gt;-1)
+  	{
+  		q-&gt;link=p-&gt;link;//新节点插在p所指节点后面 
+  		p-&gt;link=q;
+	  }
+	else
+	{
+		q-&gt;link=L-&gt;first;//新节点插在头节点之前，成为新的头节点 
+		L-&gt;first=q;
+	 }
+	 L-&gt;n++;
+	 return OK; 
+   } 
+
+ 
+//单链表的删除
+Status Delete(SingleList *L,int i)
+{
+	int j;
+	Node *p,*q;
+	if(!L-&gt;n)
+		return ERROR;
+  	if(i&lt;-1||i&gt;L-&gt;n-1)
+  		return ERROR;
+  	q=L-&gt;first;
+  	p=L-&gt;first;
+  	for(j=0;j&lt;i-1;j++)
+  		q=q-&gt;link;
+  	if(i==0)
+  		L-&gt;first=L-&gt;first-&gt;link;//删除的是头节点 
+  	else{
+  		p=q-&gt;link;//p指向ai 
+  		q-&gt;link=p-&gt;link;//从单链表中删除p所指的节点 
+	  }
+	  free(p);
+	  L-&gt;n--;
+	  return OK; 
+ } 
+//单链表的查找
+Status research(SingleList *L,int i,ElemType *x)
+{
+	Node *p;
+	int j;
+  	if(i&lt;-1||i&gt;L-&gt;n-1)
+  		return ERROR;
+  	p=L-&gt;first;
+  	for(j=0;j&lt;i;j++)
+  		p=p-&gt;link;
+  	*x=p-&gt;element;
+  	return OK;
+ } 
+//单链表的输出 
+Status Output(SingleList *L)
+{
+	Node *p;
+	if(!L-&gt;n)//判断顺序表是否为空 
+		return ERROR;
+	p=L-&gt;first;
+	while(p)
+	{
+		printf(&quot;%d&quot;,p-&gt;element);
+		p=p-&gt;link;
+	 } 
+	 return OK;
+		 
+}
+//单链表的撤销
+void Destroy(SingleList *L)
+{
+	Node *p;
+	while(L-&gt;first)
+	{
+		p=L-&gt;first-&gt;link;
+		free(L-&gt;first);
+		L-&gt;first=p;
+	}
+ } 
+int  main()
+{
+	int i;
+	int x;
+	SingleList list;
+	Init(&amp;list);
+	for(i=0;i&lt;10;i++)
+		Insert(&amp;list,i-1,i);
+	printf(&quot;The linklist is:&quot;);
+	Output(&amp;list);
+	
+	Delete(&amp;list,0);
+	printf(&quot;The linklist is:&quot;);
+	Output(&amp;list);
+	
+	research(&amp;list,1,&amp;x);
+	printf(&quot;\nthe value is&quot;);
+	printf(&quot;%d&quot;,x);
+	
+	Destroy(&amp;list);
+	
+}
+</code></pre>
+<p><strong>运行效果</strong><br>
+<img src="https://yuehuajiang.github.io/post-images/1583392274755.png" alt="" loading="lazy"></p>
+<h2 id="单链表的定义和表示">单链表的定义和表示</h2>
+<p>单链表的类型定义如下</p>
+<pre><code class="language-c">typedef struct node
+{
+	ElemType element;
+	struct node *link; 
+}Node;
+typedef struct singleList
+{
+	Node *first;
+	int n;
+}SingleList;
+</code></pre>
+<h2 id="单链表基本运算的实现">单链表基本运算的实现</h2>
+<h3 id="初始化">初始化</h3>
+<pre><code class="language-c">//单链表的初始化
+#define ERROR 0
+#define OK 1
+#define OverFlow 2//上溢 
+#define UnderFlow 3//下溢 
+#define NotPresent 4//元素不存在 
+#define Duplicate 5//有重复元素 
+typedef int Status;
+Status Init(SingleList *L)
+{
+	L-&gt;first=NULL;
+	L-&gt;n=0;
+	return OK;
+ } 
+</code></pre>
+<h3 id="查找">查找</h3>
+<pre><code class="language-c"> //单链表的查找
+ Status Find(SingleList *L,int i,ElemType *x)
+ {
+ 	Node *p;
+ 	int j;
+ 	if(i&lt;0||i&gt; L-&gt;n-1)//对i进行越界检查 
+ 		return ERROR;
+ 	p=L-&gt;first;
+ 	for(j=0;j&lt;i;j++)
+ 		p=p-&gt;link;//从头节点开始查找ai 
+ 	*x=p-&gt;element;//通过x返回ai的值 
+ 	return OK;
+  } 
+</code></pre>
+<h3 id="插入">插入</h3>
+<pre><code class="language-c">  //单链表的插入
+  Status Insert(SingleList *L,int i,ElemType x)
+  {
+  	Node *p,*q;
+  	int j;
+  	if(i&lt;-1||i&gt;L-&gt;n-1)
+  		return ERROR;
+  	p=L-&gt;first;
+  	for(j=0;j&lt;i;j++)
+	  	p=p-&gt;link;//从头开始查找ai 
+  		q=(Node*)malloc(sizeof(Node));//生成新节点q 
+  	q-&gt;element=x;
+  	if(i&gt;-1)
+  	{
+  		q-&gt;link=p-&gt;link;//新节点插在p所指节点后面 
+  		p-&gt;link=q;
+	  }
+	else
+	{
+		q-&gt;link=L-&gt;first;//新节点插在头节点之前，成为新的头节点 
+		L-&gt;first=q;
+	 }
+	 L-&gt;n++;
+	 return OK; 
+   } 
+
+</code></pre>
+<h3 id="删除">删除</h3>
+<pre><code class="language-c">//单链表的删除
+Status Delete(SingleList *L,int i)
+{
+	int j;
+	Node *p,*q;
+	if(!L-&gt;n)
+		return ERROR;
+  	if(i&lt;-1||i&gt;L-&gt;n-1)
+  		return ERROR;
+  	q=L-&gt;first;
+  	p=L-&gt;first;
+  	for(j=0;j&lt;i-1;j++)
+  		q=q-&gt;link;
+  	if(i==0)
+  		L-&gt;first=L-&gt;first-&gt;link;//删除的是头节点 
+  	else{
+  		p=q-&gt;link;//p指向ai 
+  		q-&gt;link=p-&gt;link;//从单链表中删除p所指的节点 
+	  }
+	  free(p);
+	  L-&gt;n--;
+	  return OK; 
+ } 
+</code></pre>
+<h3 id="查找-2">查找</h3>
+<pre><code class="language-c">//单链表的查找
+Status research(SingleList *L,int i,ElemType *x)
+{
+	Node *p;
+	int j;
+  	if(i&lt;-1||i&gt;L-&gt;n-1)
+  		return ERROR;
+  	p=L-&gt;first;
+  	for(j=0;j&lt;i;j++)
+  		p=p-&gt;link;
+  	*x=p-&gt;element;
+  	return OK;
+ } 
+</code></pre>
+<h3 id="输出">输出</h3>
+<pre><code class="language-c">//单链表的输出 
+Status Output(SingleList *L)
+{
+	Node *p;
+	if(!L-&gt;n)//判断顺序表是否为空 
+		return ERROR;
+	p=L-&gt;first;
+	while(p)
+	{
+		printf(&quot;%d&quot;,p-&gt;element);
+		p=p-&gt;link;
+	 } 
+	 return OK;
+		 
+}
+</code></pre>
+<h3 id="撤销">撤销</h3>
+<pre><code class="language-c">//单链表的撤销
+void Destroy(SingleList *L)
+{
+	Node *p;
+	while(L-&gt;first)
+	{
+		p=L-&gt;first-&gt;link;
+		free(L-&gt;first);
+		L-&gt;first=p;
+	}
+ } 
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[更新日志]]></title>
         <id>https://yuehuajiang.github.io/post/geng-xin-ri-zhi/</id>

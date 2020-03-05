@@ -1,0 +1,506 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>线性表的链式存储结构和实现 | 抗马拉硫磷的小菜蛾</title>
+<link rel="shortcut icon" href="https://yuehuajiang.github.io/favicon.ico?v=1583392326395">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://yuehuajiang.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="线性表的链式存储结构和实现 | 抗马拉硫磷的小菜蛾 - Atom Feed" href="https://yuehuajiang.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="完整程序(如果你比较懒就不用往下看了)
+DEV C++编译环境
+ #include&lt;stdlib.h&gt;
+ #include&lt;stdio.h&gt;
+ typedef int ElemType;
+//单链表的类型定义 
+ty..." />
+    <meta name="keywords" content="数据结构" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://yuehuajiang.github.io">
+  <img class="avatar" src="https://yuehuajiang.github.io/images/avatar.png?v=1583392326395" alt="">
+  </a>
+  <h1 class="site-title">
+    抗马拉硫磷的小菜蛾
+  </h1>
+  <p class="site-description">
+    自是人生长恨水长东
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="http://www.yuehuajiang.xyz/?tdsourcetag=s_pctim_aiomsg" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              线性表的链式存储结构和实现
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-03-05
+              </span>
+              <span>
+                7 min read
+              </span>
+              
+                <a href="https://yuehuajiang.github.io/tag/wcEGgvUlp/" class="post-tag">
+                  # 数据结构
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://yuehuajiang.github.io/post-images/xian-xing-biao-de-lian-shi-cun-chu-jie-gou-he-shi-xian.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h2 id="完整程序如果你比较懒就不用往下看了">完整程序(如果你比较懒就不用往下看了)</h2>
+<p>DEV C++编译环境</p>
+<pre><code class="language-c"> #include&lt;stdlib.h&gt;
+ #include&lt;stdio.h&gt;
+ typedef int ElemType;
+//单链表的类型定义 
+typedef struct node
+{
+	ElemType element;
+	struct node *link; 
+}Node;
+typedef struct singleList
+{
+	Node *first;
+	int n;
+}SingleList;
+
+//单链表的初始化
+#define ERROR 0
+#define OK 1
+#define OverFlow 2//上溢 
+#define UnderFlow 3//下溢 
+#define NotPresent 4//元素不存在 
+#define Duplicate 5//有重复元素 
+typedef int Status;
+Status Init(SingleList *L)
+{
+	L-&gt;first=NULL;
+	L-&gt;n=0;
+	return OK;
+ } 
+ 
+ //单链表的查找
+ Status Find(SingleList *L,int i,ElemType *x)
+ {
+ 	Node *p;
+ 	int j;
+ 	if(i&lt;0||i&gt; L-&gt;n-1)//对i进行越界检查 
+ 		return ERROR;
+ 	p=L-&gt;first;
+ 	for(j=0;j&lt;i;j++)
+ 		p=p-&gt;link;//从头节点开始查找ai 
+ 	*x=p-&gt;element;//通过x返回ai的值 
+ 	return OK;
+  } 
+  
+  //单链表的插入
+  Status Insert(SingleList *L,int i,ElemType x)
+  {
+  	Node *p,*q;
+  	int j;
+  	if(i&lt;-1||i&gt;L-&gt;n-1)
+  		return ERROR;
+  	p=L-&gt;first;
+  	for(j=0;j&lt;i;j++)
+	  	p=p-&gt;link;//从头开始查找ai 
+  		q=(Node*)malloc(sizeof(Node));//生成新节点q 
+  	q-&gt;element=x;
+  	if(i&gt;-1)
+  	{
+  		q-&gt;link=p-&gt;link;//新节点插在p所指节点后面 
+  		p-&gt;link=q;
+	  }
+	else
+	{
+		q-&gt;link=L-&gt;first;//新节点插在头节点之前，成为新的头节点 
+		L-&gt;first=q;
+	 }
+	 L-&gt;n++;
+	 return OK; 
+   } 
+
+ 
+//单链表的删除
+Status Delete(SingleList *L,int i)
+{
+	int j;
+	Node *p,*q;
+	if(!L-&gt;n)
+		return ERROR;
+  	if(i&lt;-1||i&gt;L-&gt;n-1)
+  		return ERROR;
+  	q=L-&gt;first;
+  	p=L-&gt;first;
+  	for(j=0;j&lt;i-1;j++)
+  		q=q-&gt;link;
+  	if(i==0)
+  		L-&gt;first=L-&gt;first-&gt;link;//删除的是头节点 
+  	else{
+  		p=q-&gt;link;//p指向ai 
+  		q-&gt;link=p-&gt;link;//从单链表中删除p所指的节点 
+	  }
+	  free(p);
+	  L-&gt;n--;
+	  return OK; 
+ } 
+//单链表的查找
+Status research(SingleList *L,int i,ElemType *x)
+{
+	Node *p;
+	int j;
+  	if(i&lt;-1||i&gt;L-&gt;n-1)
+  		return ERROR;
+  	p=L-&gt;first;
+  	for(j=0;j&lt;i;j++)
+  		p=p-&gt;link;
+  	*x=p-&gt;element;
+  	return OK;
+ } 
+//单链表的输出 
+Status Output(SingleList *L)
+{
+	Node *p;
+	if(!L-&gt;n)//判断顺序表是否为空 
+		return ERROR;
+	p=L-&gt;first;
+	while(p)
+	{
+		printf(&quot;%d&quot;,p-&gt;element);
+		p=p-&gt;link;
+	 } 
+	 return OK;
+		 
+}
+//单链表的撤销
+void Destroy(SingleList *L)
+{
+	Node *p;
+	while(L-&gt;first)
+	{
+		p=L-&gt;first-&gt;link;
+		free(L-&gt;first);
+		L-&gt;first=p;
+	}
+ } 
+int  main()
+{
+	int i;
+	int x;
+	SingleList list;
+	Init(&amp;list);
+	for(i=0;i&lt;10;i++)
+		Insert(&amp;list,i-1,i);
+	printf(&quot;The linklist is:&quot;);
+	Output(&amp;list);
+	
+	Delete(&amp;list,0);
+	printf(&quot;The linklist is:&quot;);
+	Output(&amp;list);
+	
+	research(&amp;list,1,&amp;x);
+	printf(&quot;\nthe value is&quot;);
+	printf(&quot;%d&quot;,x);
+	
+	Destroy(&amp;list);
+	
+}
+</code></pre>
+<p><strong>运行效果</strong><br>
+<img src="https://yuehuajiang.github.io/post-images/1583392274755.png" alt="" loading="lazy"></p>
+<h2 id="单链表的定义和表示">单链表的定义和表示</h2>
+<p>单链表的类型定义如下</p>
+<pre><code class="language-c">typedef struct node
+{
+	ElemType element;
+	struct node *link; 
+}Node;
+typedef struct singleList
+{
+	Node *first;
+	int n;
+}SingleList;
+</code></pre>
+<h2 id="单链表基本运算的实现">单链表基本运算的实现</h2>
+<h3 id="初始化">初始化</h3>
+<pre><code class="language-c">//单链表的初始化
+#define ERROR 0
+#define OK 1
+#define OverFlow 2//上溢 
+#define UnderFlow 3//下溢 
+#define NotPresent 4//元素不存在 
+#define Duplicate 5//有重复元素 
+typedef int Status;
+Status Init(SingleList *L)
+{
+	L-&gt;first=NULL;
+	L-&gt;n=0;
+	return OK;
+ } 
+</code></pre>
+<h3 id="查找">查找</h3>
+<pre><code class="language-c"> //单链表的查找
+ Status Find(SingleList *L,int i,ElemType *x)
+ {
+ 	Node *p;
+ 	int j;
+ 	if(i&lt;0||i&gt; L-&gt;n-1)//对i进行越界检查 
+ 		return ERROR;
+ 	p=L-&gt;first;
+ 	for(j=0;j&lt;i;j++)
+ 		p=p-&gt;link;//从头节点开始查找ai 
+ 	*x=p-&gt;element;//通过x返回ai的值 
+ 	return OK;
+  } 
+</code></pre>
+<h3 id="插入">插入</h3>
+<pre><code class="language-c">  //单链表的插入
+  Status Insert(SingleList *L,int i,ElemType x)
+  {
+  	Node *p,*q;
+  	int j;
+  	if(i&lt;-1||i&gt;L-&gt;n-1)
+  		return ERROR;
+  	p=L-&gt;first;
+  	for(j=0;j&lt;i;j++)
+	  	p=p-&gt;link;//从头开始查找ai 
+  		q=(Node*)malloc(sizeof(Node));//生成新节点q 
+  	q-&gt;element=x;
+  	if(i&gt;-1)
+  	{
+  		q-&gt;link=p-&gt;link;//新节点插在p所指节点后面 
+  		p-&gt;link=q;
+	  }
+	else
+	{
+		q-&gt;link=L-&gt;first;//新节点插在头节点之前，成为新的头节点 
+		L-&gt;first=q;
+	 }
+	 L-&gt;n++;
+	 return OK; 
+   } 
+
+</code></pre>
+<h3 id="删除">删除</h3>
+<pre><code class="language-c">//单链表的删除
+Status Delete(SingleList *L,int i)
+{
+	int j;
+	Node *p,*q;
+	if(!L-&gt;n)
+		return ERROR;
+  	if(i&lt;-1||i&gt;L-&gt;n-1)
+  		return ERROR;
+  	q=L-&gt;first;
+  	p=L-&gt;first;
+  	for(j=0;j&lt;i-1;j++)
+  		q=q-&gt;link;
+  	if(i==0)
+  		L-&gt;first=L-&gt;first-&gt;link;//删除的是头节点 
+  	else{
+  		p=q-&gt;link;//p指向ai 
+  		q-&gt;link=p-&gt;link;//从单链表中删除p所指的节点 
+	  }
+	  free(p);
+	  L-&gt;n--;
+	  return OK; 
+ } 
+</code></pre>
+<h3 id="查找-2">查找</h3>
+<pre><code class="language-c">//单链表的查找
+Status research(SingleList *L,int i,ElemType *x)
+{
+	Node *p;
+	int j;
+  	if(i&lt;-1||i&gt;L-&gt;n-1)
+  		return ERROR;
+  	p=L-&gt;first;
+  	for(j=0;j&lt;i;j++)
+  		p=p-&gt;link;
+  	*x=p-&gt;element;
+  	return OK;
+ } 
+</code></pre>
+<h3 id="输出">输出</h3>
+<pre><code class="language-c">//单链表的输出 
+Status Output(SingleList *L)
+{
+	Node *p;
+	if(!L-&gt;n)//判断顺序表是否为空 
+		return ERROR;
+	p=L-&gt;first;
+	while(p)
+	{
+		printf(&quot;%d&quot;,p-&gt;element);
+		p=p-&gt;link;
+	 } 
+	 return OK;
+		 
+}
+</code></pre>
+<h3 id="撤销">撤销</h3>
+<pre><code class="language-c">//单链表的撤销
+void Destroy(SingleList *L)
+{
+	Node *p;
+	while(L-&gt;first)
+	{
+		p=L-&gt;first-&gt;link;
+		free(L-&gt;first);
+		L-&gt;first=p;
+	}
+ } 
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%AE%8C%E6%95%B4%E7%A8%8B%E5%BA%8F%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%AF%94%E8%BE%83%E6%87%92%E5%B0%B1%E4%B8%8D%E7%94%A8%E5%BE%80%E4%B8%8B%E7%9C%8B%E4%BA%86">完整程序(如果你比较懒就不用往下看了)</a></li>
+<li><a href="#%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E8%A1%A8%E7%A4%BA">单链表的定义和表示</a></li>
+<li><a href="#%E5%8D%95%E9%93%BE%E8%A1%A8%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E7%9A%84%E5%AE%9E%E7%8E%B0">单链表基本运算的实现</a>
+<ul>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96">初始化</a></li>
+<li><a href="#%E6%9F%A5%E6%89%BE">查找</a></li>
+<li><a href="#%E6%8F%92%E5%85%A5">插入</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4">删除</a></li>
+<li><a href="#%E6%9F%A5%E6%89%BE-2">查找</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA">输出</a></li>
+<li><a href="#%E6%92%A4%E9%94%80">撤销</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://yuehuajiang.github.io/post/geng-xin-ri-zhi/">
+              <h3 class="post-title">
+                更新日志
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  <script src="https://utteranc.es/client.js"
+        repo="yuehuajiang/yuehuajiang.github.io"
+        issue-term="pathname"
+        label="评论"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+由Gridea和utterances提供技术支持
+  <a class="rss" href="https://yuehuajiang.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
