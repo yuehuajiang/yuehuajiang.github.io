@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuehuajiang.github.io</id>
     <title>抗马拉硫磷的小菜蛾</title>
-    <updated>2020-03-05T01:05:29.992Z</updated>
+    <updated>2020-03-05T01:13:57.318Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuehuajiang.github.io"/>
     <link rel="self" href="https://yuehuajiang.github.io/atom.xml"/>
@@ -16,7 +16,10 @@
         <link href="https://yuehuajiang.github.io/post/geng-xin-ri-zhi/">
         </link>
         <updated>2020-03-05T00:14:51.000Z</updated>
-        <content type="html"><![CDATA[<p>** 版本1.2**</p>
+        <content type="html"><![CDATA[<p><strong>版本1.3</strong></p>
+<p>好像要两个地方同时有才能有评论区</p>
+<p>在把代码插回去试试（第一个div上面，还加了&lt;%%&gt;）</p>
+<p>** 版本1.2**</p>
 <p>将代码插在底部信息框（就这样了，爱谁谁吧），其他地方的代码删除</p>
 <p><strong>版本1.1</strong></p>
 <p>*将代码插在第一个div上面</p>
