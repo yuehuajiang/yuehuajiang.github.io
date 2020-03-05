@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://http://www.yuehuajiang.xyz/?tdsourcetag=s_pctim_aiomsg</id>
+    <id>https://yuehuajiang.github.io</id>
     <title>抗马拉硫磷的小菜蛾</title>
-    <updated>2020-03-05T00:15:15.019Z</updated>
+    <updated>2020-03-05T00:23:26.007Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://http://www.yuehuajiang.xyz/?tdsourcetag=s_pctim_aiomsg"/>
-    <link rel="self" href="http://http://www.yuehuajiang.xyz?tdsourcetag=s_pctim_aiomsg/atom.xml"/>
+    <link rel="alternate" href="https://yuehuajiang.github.io"/>
+    <link rel="self" href="https://yuehuajiang.github.io/atom.xml"/>
     <subtitle>自是人生长恨水长东</subtitle>
-    <logo>http://http://www.yuehuajiang.xyz?tdsourcetag=s_pctim_aiomsg/images/avatar.png</logo>
-    <icon>http://http://www.yuehuajiang.xyz?tdsourcetag=s_pctim_aiomsg/favicon.ico</icon>
+    <logo>https://yuehuajiang.github.io/images/avatar.png</logo>
+    <icon>https://yuehuajiang.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 抗马拉硫磷的小菜蛾</rights>
     <entry>
         <title type="html"><![CDATA[更新日志]]></title>
-        <id>http://http://www.yuehuajiang.xyz?tdsourcetag=s_pctim_aiomsg/post/geng-xin-ri-zhi/</id>
-        <link href="http://http://www.yuehuajiang.xyz?tdsourcetag=s_pctim_aiomsg/post/geng-xin-ri-zhi/">
+        <id>https://yuehuajiang.github.io/post/geng-xin-ri-zhi/</id>
+        <link href="https://yuehuajiang.github.io/post/geng-xin-ri-zhi/">
         </link>
         <updated>2020-03-05T00:14:51.000Z</updated>
-        <content type="html"><![CDATA[<p><strong>版本1.0</strong></p>
+        <content type="html"><![CDATA[<p><strong>版本1.1</strong></p>
+<p>*将代码插在第一个div上面</p>
+<p>*把域名改yuehuajiang.github.io</p>
+<p><strong>版本1.0</strong></p>
 <p>*将域名里的http去掉</p>
 <p>*添加底部信息</p>
 <p>*将代码插在第一个div下面</p>
@@ -24,8 +27,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[ 纯萌新手把手教你从零开始搭建自己的博客]]></title>
-        <id>http://http://www.yuehuajiang.xyz?tdsourcetag=s_pctim_aiomsg/post/chun-meng-xin-shou-ba-shou-jiao-ni-cong-ling-kai-shi-da-jian-zi-ji-de-bo-ke/</id>
-        <link href="http://http://www.yuehuajiang.xyz?tdsourcetag=s_pctim_aiomsg/post/chun-meng-xin-shou-ba-shou-jiao-ni-cong-ling-kai-shi-da-jian-zi-ji-de-bo-ke/">
+        <id>https://yuehuajiang.github.io/post/chun-meng-xin-shou-ba-shou-jiao-ni-cong-ling-kai-shi-da-jian-zi-ji-de-bo-ke/</id>
+        <link href="https://yuehuajiang.github.io/post/chun-meng-xin-shou-ba-shou-jiao-ni-cong-ling-kai-shi-da-jian-zi-ji-de-bo-ke/">
         </link>
         <updated>2020-03-04T10:42:01.000Z</updated>
         <content type="html"><![CDATA[<h2 id="方法一gridea推荐">方法一：Gridea(推荐)</h2>
@@ -45,7 +48,7 @@
 <h2 id="博客搭建排雷">博客搭建排雷</h2>
 <h3 id="雷区一更改了cname之后找不到博客的ip地址">雷区一:更改了CNAME之后找不到博客的IP地址</h3>
 <p>CNAME如果没有,<strong>就不要写</strong>,因为你不知道会发生什么(没错,就是我)<br>
-<img src="http://http://www.yuehuajiang.xyz/?tdsourcetag=s_pctim_aiomsg/post-images/1583318554707.png" alt="" loading="lazy"></p>
+<img src="https://yuehuajiang.github.io/post-images/1583318554707.png" alt="" loading="lazy"></p>
 <p>如果不知道链接到哪里去了,就会找不到IP地址</p>
 <p>如果这种事还是发生了,别着急,请参见方法二里的配置自定义域名并免费使用HTTPS</p>
 <p>你可以在阿里云或者腾讯云买一个域名解析(连接)到你的博客解决这个问题</p>
@@ -63,8 +66,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[ 纯萌新手把手教你从零开始配置虚拟机]]></title>
-        <id>http://http://www.yuehuajiang.xyz?tdsourcetag=s_pctim_aiomsg/post/chun-meng-xin-shou-ba-shou-jiao-ni-cong-ling-pei-zhi-xu-ni-ji/</id>
-        <link href="http://http://www.yuehuajiang.xyz?tdsourcetag=s_pctim_aiomsg/post/chun-meng-xin-shou-ba-shou-jiao-ni-cong-ling-pei-zhi-xu-ni-ji/">
+        <id>https://yuehuajiang.github.io/post/chun-meng-xin-shou-ba-shou-jiao-ni-cong-ling-pei-zhi-xu-ni-ji/</id>
+        <link href="https://yuehuajiang.github.io/post/chun-meng-xin-shou-ba-shou-jiao-ni-cong-ling-pei-zhi-xu-ni-ji/">
         </link>
         <updated>2020-03-03T06:49:30.000Z</updated>
         <content type="html"><![CDATA[<h3 id="实验目的逆向分析平台搭建">实验目的：逆向分析平台搭建</h3>
@@ -100,7 +103,7 @@
 <p><strong>路径里不要有中文</strong></p>
 <h4 id="雷区二bios">雷区二：BIOS</h4>
 <p>如果你启动虚拟机，闪退，然后弹出这个，那就是需要设置BIOS</p>
-<figure data-type="image" tabindex="1"><img src="http://http://www.yuehuajiang.xyz/?tdsourcetag=s_pctim_aiomsg/post-images/1583218211581.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://yuehuajiang.github.io/post-images/1583218211581.jpg" alt="" loading="lazy"></figure>
 <p><strong>如何进入BIOS?</strong></p>
 <p><a href="https://zhuanlan.zhihu.com/p/34223088">https://zhuanlan.zhihu.com/p/34223088</a></p>
 <p>看这个，千万不要去彪手速，Win10有这个功能</p>
@@ -111,7 +114,7 @@
 <p>如果是你的网卡有问题，可以安装驱动精灵</p>
 <p>​			<a href="https://blog.csdn.net/zhaohansk/article/details/78246876">https://blog.csdn.net/zhaohansk/article/details/78246876</a></p>
 <p>如果不是网卡的问题</p>
-<figure data-type="image" tabindex="2"><img src="http://http://www.yuehuajiang.xyz/?tdsourcetag=s_pctim_aiomsg/post-images/1583218226736.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://yuehuajiang.github.io/post-images/1583218226736.png" alt="" loading="lazy"></figure>
 <p>选择NET(第一个)</p>
 <p>如果不行，可以选择桥接网卡，但是我没有找到具体怎么设置。你可以自己上网去搜一搜。</p>
 <p>别着急，很多人都有同样的问题，慢慢来</p>
@@ -143,8 +146,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[线性表的顺序储存结构和实现]]></title>
-        <id>http://http://www.yuehuajiang.xyz?tdsourcetag=s_pctim_aiomsg/post/xian-xing-biao-de-shun-xu-chu-cun-jie-gou-he-shi-xian/</id>
-        <link href="http://http://www.yuehuajiang.xyz?tdsourcetag=s_pctim_aiomsg/post/xian-xing-biao-de-shun-xu-chu-cun-jie-gou-he-shi-xian/">
+        <id>https://yuehuajiang.github.io/post/xian-xing-biao-de-shun-xu-chu-cun-jie-gou-he-shi-xian/</id>
+        <link href="https://yuehuajiang.github.io/post/xian-xing-biao-de-shun-xu-chu-cun-jie-gou-he-shi-xian/">
         </link>
         <updated>2020-03-01T03:31:42.000Z</updated>
         <content type="html"><![CDATA[<h2 id="完整程序如果你比较懒就不用往下看了">完整程序(如果你比较懒就不用往下看了)</h2>
@@ -256,7 +259,7 @@ main()
 	Destroy(&amp;list);	
 }
 </code></pre>
-<figure data-type="image" tabindex="1"><img src="http://http://www.yuehuajiang.xyz/?tdsourcetag=s_pctim_aiomsg/post-images/1583033551748.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://yuehuajiang.github.io/post-images/1583033551748.png" alt="" loading="lazy"></figure>
 <p>正文开始</p>
 <h2 id="线性表的顺序储存结构">线性表的顺序储存结构</h2>
 <h4 id="线性表的顺序定义">线性表的顺序定义</h4>
@@ -352,8 +355,8 @@ Status Init (SeqList *L,int mSize)
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>http://http://www.yuehuajiang.xyz?tdsourcetag=s_pctim_aiomsg/post/hello-gridea/</id>
-        <link href="http://http://www.yuehuajiang.xyz?tdsourcetag=s_pctim_aiomsg/post/hello-gridea/">
+        <id>https://yuehuajiang.github.io/post/hello-gridea/</id>
+        <link href="https://yuehuajiang.github.io/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
