@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuehuajiang.github.io</id>
     <title>抗马拉硫磷的小菜蛾</title>
-    <updated>2020-03-05T09:47:06.316Z</updated>
+    <updated>2020-03-16T10:10:25.512Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuehuajiang.github.io"/>
     <link rel="self" href="https://yuehuajiang.github.io/atom.xml"/>
@@ -10,6 +10,27 @@
     <logo>https://yuehuajiang.github.io/images/avatar.png</logo>
     <icon>https://yuehuajiang.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 抗马拉硫磷的小菜蛾</rights>
+    <entry>
+        <title type="html"><![CDATA[纯萌新手把手教你爆破软件]]></title>
+        <id>https://yuehuajiang.github.io/post/chun-meng-xin-shou-ba-shou-jiao-ni-bao-po-ruan-jian/</id>
+        <link href="https://yuehuajiang.github.io/post/chun-meng-xin-shou-ba-shou-jiao-ni-bao-po-ruan-jian/">
+        </link>
+        <updated>2020-03-16T10:05:09.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>如果你之前用的是这种白的，</strong></p>
+<figure data-type="image" tabindex="1"><img src="https://yuehuajiang.github.io/post-images/1584353302188.jpg" alt="" loading="lazy"></figure>
+<h3 id="马上换成这种黑的马上">马上换成这种黑的，马上！</h3>
+<figure data-type="image" tabindex="2"><img src="https://yuehuajiang.github.io/post-images/1584353150850.jpg" alt="" loading="lazy"></figure>
+<p>在这里下载：</p>
+<p><a href="https://down.52pojie.cn/Tools/Debuggers/">https://down.52pojie.cn/Tools/Debuggers/</a></p>
+<p>这里有一个详细的教程：<br>
+<a href="https://www.cnblogs.com/hkleak/p/5013040.html">https://www.cnblogs.com/hkleak/p/5013040.html</a></p>
+<p>我就不过多赘述了</p>
+<p>就是有一个注意的小点，就是找跳转这条命令的时候注意要找全</p>
+<p>这里还有B站的一个教学视频，也放在这里</p>
+<p><a href="https://www.bilibili.com/video/av89683405/?spm_id_from=333.788.videocard.1">https://www.bilibili.com/video/av89683405/?spm_id_from=333.788.videocard.1</a></p>
+<p>加油，祝你成功💪</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[线性表的链式存储结构和实现]]></title>
         <id>https://yuehuajiang.github.io/post/xian-xing-biao-de-lian-shi-cun-chu-jie-gou-he-shi-xian/</id>
@@ -424,7 +445,9 @@ free(p);
         <link href="https://yuehuajiang.github.io/post/geng-xin-ri-zhi/">
         </link>
         <updated>2020-03-05T00:14:51.000Z</updated>
-        <content type="html"><![CDATA[<p><strong>版本1.3</strong></p>
+        <content type="html"><![CDATA[<p><strong>版本1.4</strong><br>
+更新“纯萌新手把手教你爆破软件”<br>
+<strong>版本1.3</strong></p>
 <p>好像要两个地方同时有才能有评论区</p>
 <p>在把代码插回去试试（第一个div上面，还加了&lt;%%&gt;）</p>
 <p><strong>版本1.2</strong></p>
